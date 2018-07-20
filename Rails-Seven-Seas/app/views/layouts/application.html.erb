@@ -7,11 +7,52 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
     <%= yield %>
+
+    <footer class="container branding text-center">
+      <br>
+      <small> <strong style="color:#BBB;">
+        <% case 1 + rand(6)
+        when 1 %>
+        <p><i>“Day after day, day after day,
+        We stuck, nor breath nor motion;
+        As idle as a painted ship
+        Upon a painted ocean.”</i></p> <p>-Samuel Taylor Coleridge</p>
+    		<% when 2 %>
+        <p><i>“There is pleasure in the pathless woods,
+          there is rapture in the lonely shore,
+          there is society where none intrudes,
+          by the deep sea, and music in its roar;
+          I love not Man the less, but Nature more.”</i></p> <p>-Lord Byron</p>
+        <% when 3 %>
+        <p><i>“The sea is only the embodiment of a supernatural and wonderful existence.”</i></p> <p>-Jules Verne</p>
+        <% when 4 %>
+        <p><i>“The sea, once it casts its spell, holds one in its net of wonder forever.”</i></p> <p>-Jacques Yves Cousteau</p>
+        <% when 5 %>
+        <p><i>"Brandy, you're a fine girl;
+        What a good wife you would be;
+        But my life, my lover, my lady is the sea."</i></p> <p>-Through the Looking Glass</p>
+        <% when 6 %>
+        <p><i>"We'll meet beyond the shore;
+        We'll kiss just like before;
+        Happy we'll be beyond the sea;
+        And never again I'll go sailing"</i></p> <p>-Jack Lawerence</p>
+    		<% end %>
+      </strong></small>
+    </footer>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <!--[if lt IE 7]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+    <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+  <![endif]-->
   </body>
 </html>
