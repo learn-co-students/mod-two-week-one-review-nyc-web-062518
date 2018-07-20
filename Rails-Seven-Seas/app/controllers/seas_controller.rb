@@ -6,6 +6,7 @@ class SeasController < ApplicationController
   end
 
   def new
+    @sea = Sea.new
   end
 
   def edit
@@ -14,6 +15,23 @@ class SeasController < ApplicationController
 
   def show
     @sea = Sea.find_by(id: params[:id])
+  end
+
+  def create
+    @sea = Sea.create(name: params[:sea][:name], temperature: params[:sea][:temperature], bio: params[:sea][:bio], mood: params[:sea][:mood], image_url: params[:sea][:image_url], favorite_color: params[:sea][:favorite_color], scariest_creature:  params[:sea][:scariest_creature], has_mermaids: params[:sea][:has_mermaids])
+    redirect_to seas_path
+  end
+
+  def update
+    @sea = Sea.find_by(id: params[:id])
+    @sea.update(name: params[:sea][:name], temperature: params[:sea][:temperature], bio: params[:sea][:bio], mood: params[:sea][:mood], image_url: params[:sea][:image_url], favorite_color: params[:sea][:favorite_color], scariest_creature:  params[:sea][:scariest_creature], has_mermaids: params[:sea][:has_mermaids])
+    redirect_to sea_path
+  end
+
+  def destroy
+    @sea = Sea.find_by(id: params[:id])
+    @sea.destroy
+    redirect_to seas_path
   end
 
   private
