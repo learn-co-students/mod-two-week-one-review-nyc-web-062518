@@ -1,28 +1,36 @@
+
 <%= form_for @sea do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, :class => 'form-control'%>
+
 
   <%= f.label :temperature %>
-  <%= f.number_field :temperature %>
+  <%= f.number_field :temperature, :class => 'form-control' %>
 
   <%= f.label :bio %>
-  <%= f.text_area :bio %>
+  <%= f.text_area :bio, :class => 'form-control'  %>
 
   <%= f.label :image_url %>
-  <%= f.text_field :image_url %>
+  <%= f.text_field :image_url, :class => 'form-control'  %>
 
   <%= f.label :mood %>
-  <%= f.text_field :mood %>
+  <%= f.text_field :mood, :class => 'form-control'  %>
 
   <%= f.label :favorite_color %>
-  <%= f.text_field :favorite_color %>
+  <%= f.text_field :favorite_color, :class => 'form-control'  %>
 
   <%= f.label :scariest_creature %>
-  <%= f.text_field :scariest_creature %>
+  <%= f.text_field :scariest_creature, :class => 'form-control'  %>
 
   <%= f.label :has_mermaids %>
-  <%= f.check_box :has_mermaids %>
+  <%= f.check_box :has_mermaids, :class => 'form-control btn btn-info' %>
 
-  <%=  f.submit %>
 
+  <%=  f.submit :class => 'form-control btn btn-info' %>
+
+  <%= link_to "All Seas", seas_path, class: "btn btn-info" %>
+  <% end %>
+
+  <%= form_for @sea do |f| %>
+  <%= button_to "Delete", @sea, class: "btn btn-info" , method: "delete"%>
   <% end %>
